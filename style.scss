@@ -1,0 +1,37 @@
+*{
+    border: none;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 100px auto 100px auto;
+
+    tr {        
+        &:nth-child(even){
+            background-color: #f8f8f8;
+        }
+        &:hover{
+            background-color: rgba(0, 255, 13, 0.356);
+        }
+
+            th{
+                border: 1px solid #dddddd;
+                text-align: center;
+                padding: 8px;
+                user-select: none;
+                pointer-events: none;
+            }
+            td{
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;                
+            }
+            .txtcenter{
+                text-align: center;
+            }
+    }
+}

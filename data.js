@@ -74,6 +74,7 @@ function report(arr1, arr2, arr3) {
 
   const th = `        
     <tr id="j1">
+      <th>ID</th>
       <th>Khu vực</th>
       <th>Số ca khỏi</th>
       <th>Số ca đang điều trị</th>
@@ -83,11 +84,12 @@ function report(arr1, arr2, arr3) {
   const tb = p.map(d => {
     return `
       <tr>
+        <td class="txtcenter">${d[4]}</td>
         <td>${d[5]}</td>
-        <td>${d[0]}</td>
-        <td>${d[1]}</td>
-        <td>${d[2]}</td>
-        <td>${d[3]}</td>
+        <td class="txtcenter">${d[0]}</td>
+        <td class="txtcenter">${d[1]}</td>
+        <td class="txtcenter">${d[2]}</td>
+        <td class="txtcenter">${d[3]}</td>
       </tr>
     `
   }).join("");
