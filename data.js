@@ -68,7 +68,6 @@ function showKhuVuc(data) {
 function report(arr1,arr2,arr3){
   var cb = cabenh;
   var kv = khuvuc;  
-  console.log(mergeArrayObjects(cb,kv));
   var p = mergeArrayObjects(cb,kv);
 
   const html = p.map(d => {
@@ -82,26 +81,5 @@ function report(arr1,arr2,arr3){
       </ul>
     `
   }).join("");
-  console.log(html);
-
-
-  for(var i=0; i<p.length;i++){
-    document.getElementById("app").innerHTML = html;
-
-
-
-    // document.getElementById("app").innerHTML = `
-    // <div>
-    //   <li>Khu vuc: ${p[i][5]}</li>
-    //   <li>so ca khoi: ${p[i][0]}</li>
-    //   <li>so ca dang dieu tri: ${p[i][1]}</li>
-    //   <li>so ca tu vong: ${p[i][2]}</li>
-    //   <li>Tong so ca: ${p[i][3]}</li>
-    // </div>`
-    ;
-
-    // console.log(      
-    //   p[i][5],"\n",p[i][0],"\n",p[i][1],"\n",p[i][2],"\n",p[i][3]   
-    // );
-  }
+  document.getElementById("app").innerHTML = html;
 }
