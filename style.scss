@@ -3,12 +3,14 @@
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+.tieude{
+    margin-top: 60px;
+}
 table{
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 80%;
-    margin: 100px auto 100px auto;
+    margin: 60px auto 100px auto;
 
     tr {        
         &:nth-child(even){
@@ -30,8 +32,8 @@ table{
                 text-align: left;
                 padding: 8px;                
             }
-            .txtcenter{
-                text-align: center;
-            }
     }
+}            
+.txtcenter{
+    text-align: center;
 }
