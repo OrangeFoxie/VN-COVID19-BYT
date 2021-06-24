@@ -14,72 +14,82 @@ Promise.all([
   showCaBenh(data);
   showKhuVuc(data);
 
-  report(data,showCaBenh,showKhuVuc);
+  report(data, showCaBenh, showKhuVuc);
 
 }).catch(function (error) {
   console.log(error);
 });
 
 
-function mergeArrayObjects(arr1,arr2){
+function mergeArrayObjects(arr1, arr2) {
   let start = 0;
   let merge = new Array();
   let a3 = new Array();
 
-  while(start < arr1.length){
-    if(arr1[start].id === arr2[start].id){
-        a3 = arr1[start].concat(arr2[start]);
-        a3.splice(6);
-        merge.push({...a3})   ; 
-      }
-    start = start+1;
+  while (start < arr1.length) {
+    if (arr1[start].id === arr2[start].id) {
+      a3 = arr1[start].concat(arr2[start]);
+      a3.splice(6);
+      merge.push({
+        ...a3
+      });
+    }
+    start = start + 1;
   }
   return merge;
 }
 
-var cabenh = new Array();
-var khuvuc = new Array();
+const cabenh = new Array();
+const khuvuc = new Array();
 
 function showCaBenh(data) {
 
-  for (var i = 0; i < data[0]["detail"].length; i++) {
+  for (let i = 0; i < data[0]["detail"].length; i++) {
     const socakhoi = data[0]["detail"][i]["socakhoi"];
     const socadangdieutri = data[0]["detail"][i]["socadangdieutri"];
     const socatuvong = data[0]["detail"][i]["socatuvong"];
     const tongca = data[0]["detail"][i]["value"];
     const hc_key = data[0]["detail"][i]["hc-key"];
 
-    var arr = new Array(socakhoi,socadangdieutri,socatuvong,tongca,hc_key);
+    let arr = new Array(socakhoi, socadangdieutri, socatuvong, tongca, hc_key);
     cabenh.push(arr);
   }
 }
 
 function showKhuVuc(data) {
 
-  for(var i=0; i<data[1]["key"].length;i++){
+  for (let i = 0; i < data[1]["key"].length; i++) {
     const name = data[1]["key"][i]["name"];
-    const hec_key = data[1]["key"][i]["hec-key"];  
+    const hec_key = data[1]["key"][i]["hec-key"];
 
-    var arr = new Array(name,hec_key);
+    let arr = new Array(name, hec_key);
     khuvuc.push(arr);
   }
 }
 
-function report(arr1,arr2,arr3){
-  var cb = cabenh;
-  var kv = khuvuc;  
-  var p = mergeArrayObjects(cb,kv);
+function report(arr1, arr2, arr3) {
+  let cb = cabenh;
+  let kv = khuvuc;
+  let p = mergeArrayObjects(cb, kv);
 
-  const html = p.map(d => {
+  const th = `        
+    <tr id="j1">
+      <th>Khu vực</th>
+      <th>Số ca khỏi</th>
+      <th>Số ca đang điều trị</th>
+      <th>Số ca tử vong</th>
+      <th>Tổng số ca</th>
+    </tr>`;
+  const tb = p.map(d => {
     return `
-      <ul>
-        <li>[Khu vuc] ${d[5]}</li>
-        <li>[so ca khoi] ${d[0]}</li>
-        <li>[so ca dang dieu tri] ${d[1]}</li>
-        <li>[so ca tu vong] ${d[2]}</li>
-        <li>[Tong so ca] ${d[3]}</li>
-      </ul>
+      <tr>
+        <td>${d[5]}</td>
+        <td>${d[0]}</td>
+        <td>${d[1]}</td>
+        <td>${d[2]}</td>
+        <td>${d[3]}</td>
+      </tr>
     `
   }).join("");
-  document.getElementById("app").innerHTML = html;
+  document.getElementById("app").innerHTML = th+tb;
 }
