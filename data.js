@@ -48,24 +48,25 @@ const khuVucArr = new Array();
 
     function BangThongTin(caBenhArr) {
         let temp = "";
-            temp += "<tr>";  
-            temp += "<th>ID</>";            
-            temp += "<th>Khu vực</>";            
-            temp += "<th>Số ca khỏi</>";            
-            temp += "<th>Số ca đang điều trị</>";            
-            temp += "<th>Số ca tử vong</>";            
-            temp += "<th>Tổng ca bệnh</>";            
-            temp += "</th>";
+            temp += `<tr>`;  
+            temp += `<th>ID</>`;            
+            temp += `<th>Khu vực</>`;            
+            temp += `<th>Số ca khỏi</>`;            
+            temp += `<th>Số ca đang điều trị</>`;            
+            temp += `<th>Số ca tử vong</>`;            
+            temp += `<th>Tổng ca bệnh</>`;            
+            temp += `</th>`;
 
         data = caBenhArr[0];
         data.forEach((itemData) => {
-            temp += "<tr>";
-            temp += "<td>" + itemData['hc-key'] + "</td>";
-            temp += "<td>" + itemData['name'] + "</td>";
-            temp += "<td>" + itemData['socakhoi'] + "</td>";
-            temp += "<td>" + itemData['socadangdieutri'] + "</td>";
-            temp += "<td>" + itemData['socatuvong'] + "</td>";
-            temp += "<td>" + itemData['value'] + "</td></tr>";
+            temp += `<tr>`;
+            temp += `<td class="txtcenter">${itemData['hc-key']}</td>`;
+            temp += `<td>${itemData['name']}</td>`;
+            temp += `<td class="txtcenter">${itemData['socakhoi']}</td>`;
+            temp += `<td class="txtcenter">${itemData['socadangdieutri']}</td>`;
+            temp += `<td class="txtcenter">${itemData['socatuvong']}</td>`;
+            temp += `<td class="txtcenter">${itemData['value']}</td>`;
+            temp += `</tr>`;
         });
         document.getElementById('datatable').innerHTML = temp;
     }
