@@ -7,6 +7,9 @@
   margin-top: 60px;
   user-select: none; }
 
+.txtcenter {
+  text-align: center; }
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -27,7 +30,15 @@ table {
     text-align: left;
     padding: 8px; }
 
-.txtcenter {
-  text-align: center; }
+.infoapi {
+  text-align: center;
+  margin-bottom: 100px; }
+  .infoapi ul li {
+    list-style: none;
+    padding: 4px; }
+    .infoapi ul li a {
+      text-decoration: none;
+      color: black;
+      font-weight: 600; }
 
 /*# sourceMappingURL=style.css.map */

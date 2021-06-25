@@ -3,10 +3,15 @@
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .tieude{
     margin-top: 60px;
     user-select: none;
 }
+.txtcenter{
+    text-align: center;
+}
+
 table{
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -35,6 +40,20 @@ table{
             }
     }
 }            
-.txtcenter{
+
+
+.infoapi{
     text-align: center;
+    margin-bottom: 100px;
+    ul{
+        li{
+            list-style: none;
+            padding: 4px;
+            a{
+                text-decoration: none;
+                color: rgb(0, 0, 0);
+                font-weight: 600;
+            }
+        }
+    }
 }
