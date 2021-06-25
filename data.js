@@ -20,24 +20,33 @@ Promise.all([
   console.log(error);
 });
 
-
-function mergeArrayObjects(arr1, arr2) {
-  let start = 0;
+                          // cb, kv
+function mergeArrayObjects(arr1, arr2) { 
+  let i = 0;
   let merge = new Array();
   let a3 = new Array();
-
-  while (start < arr1.length) {
-    if (arr1[start].id === arr2[start].id) {
-      a3 = arr1[start].concat(arr2[start]);
-      a3.splice(6);
-      merge.push({
-        ...a3
-      });
-    }
-    start = start + 1;
+  
+  for (i;i < arr1.length;i++) {
+    if (arr1[i][4] === arr2[i][1]) {
+      a3 = arr1[i].concat(arr2[i]); 
+      merge.push({...a3});
+      console.log(a3);
+    } 
   }
   return merge;
+
+  // while (i < arr1.length) {
+  //   if (arr1[i]["hec_key"] === arr2[i]["hec_key"]) {
+  //     a3 = arr1[i].concat(arr2[i]);
+  //     merge.push({...a3});
+  //   }
+  //   i+=1;
+  //   console.log(a3);
+  // }
+  // return merge;
+
 }
+
 
 const cabenh = new Array();
 const khuvuc = new Array();
@@ -49,9 +58,9 @@ function showCaBenh(data) {
     const socadangdieutri = data[0]["detail"][i]["socadangdieutri"];
     const socatuvong = data[0]["detail"][i]["socatuvong"];
     const tongca = data[0]["detail"][i]["value"];
-    const hc_key = data[0]["detail"][i]["hc-key"];
+    const id = data[0]["detail"][i]["hc-key"].toString();
 
-    let arr = new Array(socakhoi, socadangdieutri, socatuvong, tongca, hc_key);
+    let arr = new Array(socakhoi, socadangdieutri, socatuvong, tongca, id);
     cabenh.push(arr);
   }
 }
@@ -60,9 +69,9 @@ function showKhuVuc(data) {
 
   for (let i = 0; i < data[1]["key"].length; i++) {
     const name = data[1]["key"][i]["name"];
-    const hec_key = data[1]["key"][i]["hec-key"];
+    const id = data[1]["key"][i]["hec-key"].toString();
 
-    let arr = new Array(name, hec_key);
+    let arr = new Array(name, id);
     khuvuc.push(arr);
   }
 }
@@ -75,6 +84,7 @@ function report(arr1, arr2, arr3) {
   const th = `        
     <tr id="j1">
       <th>ID</th>
+      <th>ID</th>
       <th>Khu vực</th>
       <th>Số ca khỏi</th>
       <th>Số ca đang điều trị</th>
@@ -85,6 +95,7 @@ function report(arr1, arr2, arr3) {
     return `
       <tr>
         <td class="txtcenter">${d[4]}</td>
+        <td class="txtcenter">${d[6]}</td>
         <td>${d[5]}</td>
         <td class="txtcenter">${d[0]}</td>
         <td class="txtcenter">${d[1]}</td>
