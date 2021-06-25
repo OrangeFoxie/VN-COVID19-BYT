@@ -13,7 +13,7 @@ Promise.all([
     getCaBenh(data);
     getKhuVuc(data);  
     getNameKV(caBenhArr,khuVucArr);
-    loadProvinceTable(caBenhArr,khuVucArr);
+    BangThongTin(caBenhArr);
   }).catch(function (error) {
     console.log(error);
   });
@@ -26,13 +26,11 @@ const khuVucArr = new Array();
 
     function getCaBenh(data) {
         caBenhArr.push(data[0]['detail']);
-        console.log(caBenhArr);
         return caBenhArr;
     }
 
     function getKhuVuc(data) {
         khuVucArr.push(data[1]['key']);
-        console.log(khuVucArr);
         return khuVucArr;
     }
 
@@ -48,13 +46,21 @@ const khuVucArr = new Array();
         }
     }
 
-    function loadProvinceTable(caBenhArr, khuVucArr) {
+    function BangThongTin(caBenhArr) {
         let temp = "";
-            temp += "<tr>";            temp += "<th>Khu vực</>";            temp += "<th>Số ca khỏi</>";            temp += "<th>Số ca đang điều trị</>";            temp += "<th>Số ca tử vong</>";            temp += "<th>Tổng ca bệnh</>";            temp += "</th>";
+            temp += "<tr>";  
+            temp += "<th>ID</>";            
+            temp += "<th>Khu vực</>";            
+            temp += "<th>Số ca khỏi</>";            
+            temp += "<th>Số ca đang điều trị</>";            
+            temp += "<th>Số ca tử vong</>";            
+            temp += "<th>Tổng ca bệnh</>";            
+            temp += "</th>";
 
         data = caBenhArr[0];
         data.forEach((itemData) => {
             temp += "<tr>";
+            temp += "<td>" + itemData['hc-key'] + "</td>";
             temp += "<td>" + itemData['name'] + "</td>";
             temp += "<td>" + itemData['socakhoi'] + "</td>";
             temp += "<td>" + itemData['socadangdieutri'] + "</td>";
