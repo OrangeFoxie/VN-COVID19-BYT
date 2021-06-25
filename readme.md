@@ -8,4 +8,5 @@
     <li><a href="https://ncov.moh.gov.vn/" target="_blank">NGUỒN CẤP DỮ LIỆU</a></li>
     <li><a href="https://github.com/OrangeFoxie/VN-COVID19-BYT.git" target="_blank">SOURCE CODE CỦA DEMO NÀY</a></li>
 </ul>
-<h5>Demo được làm từ rất nhiều tình yêu thương và sự đam mê cũng như chán nản Javascrip của một bạn Cáo màu cam dễ thương vô cùng ;3</h5>
+
+<h5>" Demo được làm từ rất nhiều tình yêu thương và sự đam mê cũng như chán nản Javascripts của một bạn Cáo màu cam dễ thương vô cùng ;3 "</h5>
