@@ -10,25 +10,30 @@
 .txtcenter {
   text-align: center; }
 
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 80%;
-  margin: 60px auto 100px auto; }
-  table tr:nth-child(even) {
-    background-color: #f8f8f8; }
-  table tr:hover {
-    background-color: rgba(0, 255, 13, 0.356); }
-  table tr th {
-    border: 1px solid #dddddd;
+section {
+  margin-top: 40px; }
+  section div h1 {
     text-align: center;
-    padding: 8px;
-    user-select: none;
-    pointer-events: none; }
-  table tr td {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px; }
+    color: #e20000; }
+  section div table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto 100px auto; }
+    section div table tr:nth-child(even) {
+      background-color: #f8f8f8; }
+    section div table tr:hover {
+      background-color: rgba(0, 255, 13, 0.356); }
+    section div table tr th {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+      user-select: none;
+      pointer-events: none; }
+    section div table tr td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px; }
 
 .infoapi {
   text-align: center;
