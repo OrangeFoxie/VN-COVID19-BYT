@@ -40,7 +40,7 @@ const khuVucArr = new Array();
           for(var j =0; j<khuVucArr[0].length;j++){
             if(caBenhArr[0][i]['hc-key']===khuVucArr[0][j]['hec-key']){
               caBenhArr[0][i]['name'] = khuVucArr[0][j]['name'];
-              console.log(caBenhArr[0][i]['name'],caBenhArr[0][i]['hc-key'],khuVucArr[0][j]['hec-key']);
+              // console.log(caBenhArr[0][i]['name'],caBenhArr[0][i]['hc-key'],khuVucArr[0][j]['hec-key']);
             }
           }
         }
