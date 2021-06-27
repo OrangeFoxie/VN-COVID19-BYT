@@ -29,7 +29,7 @@ section{
             tr {        
                 &:nth-child(even){
                     background-color: #f8f8f8;
-                }
+                }                
                 &:hover{
                     background-color: rgba(0, 255, 13, 0.356);
                 }
@@ -44,7 +44,13 @@ section{
                     td{
                         border: 1px solid #dddddd;
                         text-align: left;
-                        padding: 8px;                
+                        padding: 8px;    
+                        text-align: center;
+
+                        &:nth-child(2){
+                            text-align: left;
+                            text-transform: capitalize;
+                        }            
                     }
             }
         }     
@@ -64,6 +70,14 @@ section{
                 color: rgb(0, 0, 0);
                 font-weight: 600;
             }
+        }
+    }
+}
+
+#datatableCL{
+    tr{
+        td{
+            text-align: center;
         }
     }
 }

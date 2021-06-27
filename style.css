@@ -33,7 +33,11 @@ section {
     section div table tr td {
       border: 1px solid #dddddd;
       text-align: left;
-      padding: 8px; }
+      padding: 8px;
+      text-align: center; }
+      section div table tr td:nth-child(2) {
+        text-align: left;
+        text-transform: capitalize; }
 
 .infoapi {
   text-align: center;
@@ -45,5 +49,8 @@ section {
       text-decoration: none;
       color: black;
       font-weight: 600; }
+
+#datatableCL tr td {
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

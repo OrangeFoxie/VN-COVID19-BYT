@@ -56,8 +56,7 @@ const clCaTuVong = new Array();
           for(var k = 0; k < clCaTuVong[0].length; k++){
             if(clCaNhiem[0][i]['day'] === clCaKhoi[0][j]['day'] && clCaNhiem[0][i]['day'] === clCaTuVong[0][k]['day']){
               clCaNhiem[0][i]['cakhoi'] = clCaKhoi[0][j]['quantity'];
-              clCaNhiem[0][i]['catuvong'] = clCaTuVong[0][k]['quantity'];
-              // console.log(clCaNhiem[0][i]);
+              clCaNhiem[0][i]['catuvong'] = clCaTuVong[0][k]['quantity'];      
             }
           }
         }
@@ -67,14 +66,13 @@ const clCaTuVong = new Array();
 
     function getNameKV(caBenhArr,khuVucArr){
         
-        for(var i=0; i<caBenhArr[0].length;i++){          
-          for(var j =0; j<khuVucArr[0].length;j++){
-            if(caBenhArr[0][i]['hc-key']===khuVucArr[0][j]['hec-key']){
-              caBenhArr[0][i]['name'] = khuVucArr[0][j]['name'];
-              // console.log(caBenhArr[0][i]['name'],caBenhArr[0][i]['hc-key'],khuVucArr[0][j]['hec-key']);
-            }
+      for(var i=0; i<caBenhArr[0].length;i++){          
+        for(var j =0; j<khuVucArr[0].length;j++){
+          if(caBenhArr[0][i]['hc-key']===khuVucArr[0][j]['hec-key']){
+            caBenhArr[0][i]['name'] = khuVucArr[0][j]['name'].replace("-"," ");
           }
         }
+      }
     }
 
     function BangThongTin(caBenhArr) {
@@ -91,12 +89,12 @@ const clCaTuVong = new Array();
         data = caBenhArr[0];
         data.forEach((itemData) => {
             temp += `<tr>`;
-            temp += `<td class="txtcenter">${itemData['hc-key']}</td>`;
+            temp += `<td>${itemData['hc-key']}</td>`;
             temp += `<td>${itemData['name']}</td>`;
-            temp += `<td class="txtcenter">${itemData['socakhoi']}</td>`;
-            temp += `<td class="txtcenter">${itemData['socadangdieutri']}</td>`;
-            temp += `<td class="txtcenter">${itemData['socatuvong']}</td>`;
-            temp += `<td class="txtcenter">${itemData['value']}</td>`;
+            temp += `<td>${itemData['socakhoi']}</td>`;
+            temp += `<td>${itemData['socadangdieutri']}</td>`;
+            temp += `<td>${itemData['socatuvong']}</td>`;
+            temp += `<td>${itemData['value']}</td>`;
             temp += `</tr>`;
         });
         document.getElementById('datatable').innerHTML = temp;
@@ -114,12 +112,11 @@ const clCaTuVong = new Array();
       data = clCaNhiem[0];
       data.forEach((itemData) => {
           temp += `<tr>`;
-          temp += `<td class="txtcenter">${itemData['day']}</td>`;
-          temp += `<td class="txtcenter">${itemData['quantity']}</td>`;
-          temp += `<td class="txtcenter">${itemData['cakhoi']}</td>`;
-          temp += `<td class="txtcenter">${itemData['catuvong']}</td>`;
+          temp += `<td>${itemData['day']}</td>`;
+          temp += `<td>${itemData['quantity']}</td>`;
+          temp += `<td>${itemData['cakhoi']}</td>`;
+          temp += `<td>${itemData['catuvong']}</td>`;
           temp += `</tr>`;
       });
       document.getElementById('datatableCL').innerHTML = temp;
   }
-
