@@ -69,7 +69,7 @@ const clCaTuVong = new Array();
       for(var i=0; i<caBenhArr[0].length;i++){          
         for(var j =0; j<khuVucArr[0].length;j++){
           if(caBenhArr[0][i]['hc-key']===khuVucArr[0][j]['hec-key']){
-            caBenhArr[0][i]['name'] = khuVucArr[0][j]['name'].replace("-"," ");
+            caBenhArr[0][i]['name'] = khuVucArr[0][j]['name'].replaceAll("-"," ");
           }
         }
       }
