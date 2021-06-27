@@ -42,6 +42,17 @@ const clCaTuVong = new Array();
         return khuVucArr;
     }
 
+    function getNameKV(caBenhArr,khuVucArr){
+        
+      for(var i=0; i<caBenhArr[0].length;i++){    
+        caBenhArr[0][i]['stt'] = i;      
+        for(var j =0; j<khuVucArr[0].length;j++){
+          if(caBenhArr[0][i]['hc-key']===khuVucArr[0][j]['hec-key']){
+            caBenhArr[0][i]['name'] = khuVucArr[0][j]['name'].replaceAll("-"," ");
+          }
+        }
+      }
+    }
     function getCachLi(data) {
       cachLiArr.push(data);
       clCaKhoi.push(cachLiArr[0][2]['cakhoi']);
@@ -51,7 +62,7 @@ const clCaTuVong = new Array();
     } 
 
     function getNgayCachLi(clCaNhiem,clCaKhoi,clCaTuVong){
-      for(var i = 0; i < clCaNhiem[0].length; i++){
+      for(var i = 0; i < clCaNhiem[0].length; i++){ clCaNhiem[0][i]['stt'] = i;
         for(var j = 0; j < clCaKhoi[0].length; j++){
           for(var k = 0; k < clCaTuVong[0].length; k++){
             if(clCaNhiem[0][i]['day'] === clCaKhoi[0][j]['day'] && clCaNhiem[0][i]['day'] === clCaTuVong[0][k]['day']){
@@ -63,21 +74,18 @@ const clCaTuVong = new Array();
       }
     }
 
-
-    function getNameKV(caBenhArr,khuVucArr){
-        
-      for(var i=0; i<caBenhArr[0].length;i++){          
-        for(var j =0; j<khuVucArr[0].length;j++){
-          if(caBenhArr[0][i]['hc-key']===khuVucArr[0][j]['hec-key']){
-            caBenhArr[0][i]['name'] = khuVucArr[0][j]['name'].replaceAll("-"," ");
-          }
-        }
+    function checkNameKV(nameKV){
+      if(nameKV){        
+        return nameKV;
+      }else{
+        return nameKV="mất dấu khu vực";
       }
     }
 
     function BangThongTin(caBenhArr) {
         let temp = "";
             temp += `<tr>`;  
+            temp += `<th>STT</>`;
             temp += `<th>ID</>`;            
             temp += `<th>Khu vực</>`;            
             temp += `<th>Số ca khỏi</>`;            
@@ -89,8 +97,9 @@ const clCaTuVong = new Array();
         data = caBenhArr[0];
         data.forEach((itemData) => {
             temp += `<tr>`;
+            temp += `<td>${itemData['stt']}</td>`;
             temp += `<td>${itemData['hc-key']}</td>`;
-            temp += `<td>${itemData['name']}</td>`;
+            temp += `<td>${checkNameKV(itemData['name'])}</td>`;
             temp += `<td>${itemData['socakhoi']}</td>`;
             temp += `<td>${itemData['socadangdieutri']}</td>`;
             temp += `<td>${itemData['socatuvong']}</td>`;
@@ -103,6 +112,7 @@ const clCaTuVong = new Array();
     function BangCachLi(clCaNhiem) {
       let temp = "";
           temp += `<tr>`;  
+          temp += `<th>STT</>`;
           temp += `<th>Ngày</>`;            
           temp += `<th>Số ca nhiễm</>`;            
           temp += `<th>Số ca khỏi</>`;            
@@ -112,6 +122,7 @@ const clCaTuVong = new Array();
       data = clCaNhiem[0];
       data.forEach((itemData) => {
           temp += `<tr>`;
+          temp += `<td>${itemData['stt']}</td>`;
           temp += `<td>${itemData['day']}</td>`;
           temp += `<td>${itemData['quantity']}</td>`;
           temp += `<td>${itemData['cakhoi']}</td>`;

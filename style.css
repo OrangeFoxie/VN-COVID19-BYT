@@ -35,7 +35,9 @@ section {
       text-align: left;
       padding: 8px;
       text-align: center; }
-      section div table tr td:nth-child(2) {
+      section div table tr td:nth-child(1) {
+        width: 10px; }
+      section div table tr td:nth-child(3) {
         text-align: left;
         text-transform: capitalize; }
 
@@ -52,5 +54,7 @@ section {
 
 #datatableCL tr td {
   text-align: center; }
+  #datatableCL tr td:nth-child(1) {
+    width: 10px; }
 
 /*# sourceMappingURL=style.css.map */

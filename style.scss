@@ -47,7 +47,11 @@ section{
                         padding: 8px;    
                         text-align: center;
 
-                        &:nth-child(2){
+                        &:nth-child(1){
+                            width: 10px;
+                        }    
+
+                        &:nth-child(3){
                             text-align: left;
                             text-transform: capitalize;
                         }            
@@ -78,6 +82,10 @@ section{
     tr{
         td{
             text-align: center;
+            
+            &:nth-child(1){
+                width: 10px;
+            }   
         }
     }
 }
