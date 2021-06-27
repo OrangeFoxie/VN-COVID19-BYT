@@ -1,6 +1,4 @@
 * {
-  border: none;
-  margin: 0;
   font-family: Arial, Helvetica, sans-serif; }
 
 .tieude {
@@ -20,24 +18,28 @@ section {
     border-collapse: collapse;
     width: 80%;
     margin: 20px auto 100px auto; }
-    section div table tr:nth-child(even) {
-      background-color: #f8f8f8; }
-    section div table tr:hover {
-      background-color: rgba(0, 255, 13, 0.356); }
-    section div table tr th {
+    section div table thead {
+      position: sticky;
+      top: 0;
+      background-color: #dddddd;
       border: 1px solid #dddddd;
-      text-align: center;
-      padding: 8px;
       user-select: none;
-      pointer-events: none; }
-    section div table tr td {
+      text-align: center;
+      margin: 0;
+      padding: 0; }
+      section div table thead tr th {
+        padding: 8px; }
+    section div table tbody tr:nth-child(even) {
+      background-color: #f8f8f8; }
+    section div table tbody tr:hover {
+      background-color: rgba(0, 255, 13, 0.356); }
+    section div table tbody tr td {
       border: 1px solid #dddddd;
-      text-align: left;
       padding: 8px;
       text-align: center; }
-      section div table tr td:nth-child(1) {
+      section div table tbody tr td:nth-child(1) {
         width: 10px; }
-      section div table tr td:nth-child(3) {
+      section div table tbody tr td:nth-child(3) {
         text-align: left;
         text-transform: capitalize; }
 
@@ -52,9 +54,7 @@ section {
       color: black;
       font-weight: 600; }
 
-#datatableCL tr td {
+#datatableCL tr td:nth-child(3) {
   text-align: center; }
-  #datatableCL tr td:nth-child(1) {
-    width: 10px; }
 
 /*# sourceMappingURL=style.css.map */

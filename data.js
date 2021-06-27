@@ -84,15 +84,6 @@ const clCaTuVong = new Array();
 
     function BangThongTin(caBenhArr) {
         let temp = "";
-            temp += `<tr>`;  
-            temp += `<th>STT</>`;
-            temp += `<th>ID</>`;            
-            temp += `<th>Khu vực</>`;            
-            temp += `<th>Số ca khỏi</>`;            
-            temp += `<th>Số ca đang điều trị</>`;            
-            temp += `<th>Số ca tử vong</>`;            
-            temp += `<th>Tổng ca bệnh</>`;            
-            temp += `</th>`;
 
         data = caBenhArr[0];
         data.forEach((itemData) => {
@@ -111,13 +102,6 @@ const clCaTuVong = new Array();
 
     function BangCachLi(clCaNhiem) {
       let temp = "";
-          temp += `<tr>`;  
-          temp += `<th>STT</>`;
-          temp += `<th>Ngày</>`;            
-          temp += `<th>Số ca nhiễm</>`;            
-          temp += `<th>Số ca khỏi</>`;            
-          temp += `<th>Số ca tử vong</>`;            
-          temp += `</th>`;
 
       data = clCaNhiem[0];
       data.forEach((itemData) => {
