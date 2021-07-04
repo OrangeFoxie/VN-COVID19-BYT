@@ -25,7 +25,8 @@ section {
             border-collapse: collapse;
             width: 80%;
             margin: 20px auto 100px auto;
-            
+            border-collapse: separate;
+            border-spacing: 0;
 
             thead {      
                 user-select: none; 
@@ -37,8 +38,8 @@ section {
                         position: sticky;
                         top: 0;
                         padding: 8px;     
-                        border: 1px solid #dddddd;   
-                        background-color: #dddddd;                                          
+                        border: 2px solid #dddddd;
+                        background-color: #ffffff; 
                     }
                 }
             }

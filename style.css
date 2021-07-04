@@ -17,7 +17,9 @@ section {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 80%;
-    margin: 20px auto 100px auto; }
+    margin: 20px auto 100px auto;
+    border-collapse: separate;
+    border-spacing: 0; }
     section div table thead {
       user-select: none;
       text-align: center; }
@@ -25,8 +27,8 @@ section {
         position: sticky;
         top: 0;
         padding: 8px;
-        border: 1px solid #dddddd;
-        background-color: #dddddd; }
+        border: 2px solid #dddddd;
+        background-color: #ffffff; }
     section div table tbody tr:nth-child(even) {
       background-color: #f8f8f8; }
     section div table tbody tr:hover {
