@@ -10,15 +10,9 @@ Promise.all([
     return Promise.all(responses.map(function (response) {
       return response.json();
     }));
-  }).then(function (data) {
-    getCaBenh(data);
-    getKhuVuc(data);  
-    getCachLi(data);
-    getNameKV(caBenhArr,khuVucArr);
-    getNgayCachLi(clCaNhiem,clCaKhoi,clCaTuVong);
-    BangThongTin(caBenhArr);
-    BangCachLi(clCaNhiem);
-  }).catch(function (error) {
+  }).then(function (data) { // if(data), call data
+    main(data);
+  }).catch(function (error) { // if(!data), call error
     console.log(error);
   });
 
@@ -31,6 +25,16 @@ const cachLiArr = new Array();
 const clCaNhiem = new Array();
 const clCaKhoi = new Array();
 const clCaTuVong = new Array();
+
+    function main(data){  //Void main
+      getCaBenh(data);
+      getKhuVuc(data);  
+      getCachLi(data);
+      getNameKV(caBenhArr,khuVucArr);
+      getNgayCachLi(clCaNhiem,clCaKhoi,clCaTuVong);
+      BangThongTin(caBenhArr);
+      BangCachLi(clCaNhiem);
+    }
 
     function getCaBenh(data) {
         caBenhArr.push(data[0]['detail']);
