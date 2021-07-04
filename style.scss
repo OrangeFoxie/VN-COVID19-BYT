@@ -27,20 +27,18 @@ section {
             margin: 20px auto 100px auto;
             
 
-            thead {
-                position: sticky;
-                top: 0;
-                background-color: #dddddd;  
-                border: 1px solid #dddddd;            
+            thead {      
                 user-select: none; 
                 text-align: center;
-                margin: 0;
-                padding: 0;
 
-                tr {    
+                tr {           
 
                     th {
-                        padding: 8px;                        
+                        position: sticky;
+                        top: 0;
+                        padding: 8px;     
+                        border: 1px solid #dddddd;   
+                        background-color: #dddddd;                                          
                     }
                 }
             }
@@ -75,15 +73,26 @@ section {
     }
 }
 
+#datatableCL {
+    tr {
+        td {
+            &:nth-child(3){
+                text-align: center;
+            }
+        }
+    }
+}
 
 .infoapi {
-    text-align: center;
     margin-bottom: 100px;
 
     ul {
+        text-align: center;
+        padding: 2px;
+
         li {
             list-style: none;
-            padding: 4px;
+            padding: 4px 0px;   
 
             a {
                 text-decoration: none;
@@ -94,12 +103,3 @@ section {
     }
 }
 
-#datatableCL {
-    tr {
-        td {
-            &:nth-child(3){
-                text-align: center;
-            }
-        }
-    }
-}
