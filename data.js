@@ -48,8 +48,7 @@ const clCaTuVong = new Array();
 
     function getNameKV(caBenhArr,khuVucArr){
         
-      for(var i=0; i<caBenhArr[0].length;i++){    
-        caBenhArr[0][i]['stt'] = i;      
+      for(var i=0; i<caBenhArr[0].length;i++){    caBenhArr[0][i]['stt'] = i+1;      
         for(var j =0; j<khuVucArr[0].length;j++){
           if(caBenhArr[0][i]['hc-key']===khuVucArr[0][j]['hec-key']){
             caBenhArr[0][i]['name'] = khuVucArr[0][j]['name'].replaceAll("-"," ");
@@ -66,7 +65,7 @@ const clCaTuVong = new Array();
     } 
 
     function getNgayCachLi(clCaNhiem,clCaKhoi,clCaTuVong){
-      for(var i = 0; i < clCaNhiem[0].length; i++){ clCaNhiem[0][i]['stt'] = i;
+      for(var i = 0; i < clCaNhiem[0].length; i++){ clCaNhiem[0][i]['stt'] = i+1;
         for(var j = 0; j < clCaKhoi[0].length; j++){
           for(var k = 0; k < clCaTuVong[0].length; k++){
             if(clCaNhiem[0][i]['day'] === clCaKhoi[0][j]['day'] && clCaNhiem[0][i]['day'] === clCaTuVong[0][k]['day']){
