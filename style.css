@@ -14,7 +14,6 @@ section {
     text-align: center;
     color: #e20000; }
   section div table {
-    font-family: arial, sans-serif;
     width: 80%;
     margin: 20px auto 100px auto;
     border-collapse: separate;
@@ -57,5 +56,8 @@ section {
         text-decoration: none;
         color: black;
         font-weight: 600; }
+
+.text-center {
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

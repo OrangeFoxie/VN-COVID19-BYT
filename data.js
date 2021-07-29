@@ -115,7 +115,7 @@ const clCaTuVong = new Array();
 
       data = clCaNhiem[0];
       data.slice().reverse().forEach((itemData, index) => {
-          temp += `<tr class="reverse-row">`;
+          temp += `<tr>`;
           temp += `<td>${index+1}</td>`;
           temp += `<td>${itemData['day']}</td>`;
           temp += `<td>${checkDataNumb(itemData['quantity'])}</td>`;
