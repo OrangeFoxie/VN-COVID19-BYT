@@ -84,20 +84,27 @@ const clCaTuVong = new Array();
         return nameKV="mất dấu khu vực";
       }
     }
+    checkDataNumb = function(dataNumb){
+      if(!isNaN(dataNumb)){
+        return dataNumb;
+      }else{
+        return "🕵️🕵️🕵️";
+      }
+    }
 
     function BangThongTin(caBenhArr) {
         let temp = "";
 
         data = caBenhArr[0];
-        data.forEach((itemData) => {
+        data.forEach((itemData, index) => {
             temp += `<tr>`;
-            temp += `<td>${itemData['stt']}</td>`;
+            temp += `<td>${index+1}</td>`;
             temp += `<td>${itemData['hc-key']}</td>`;
             temp += `<td>${checkNameKV(itemData['name'])}</td>`;
-            temp += `<td>${itemData['socakhoi']}</td>`;
-            temp += `<td>${itemData['socadangdieutri']}</td>`;
-            temp += `<td>${itemData['socatuvong']}</td>`;
-            temp += `<td>${itemData['value']}</td>`;
+            temp += `<td>${checkDataNumb(itemData['socakhoi'])}</td>`;
+            temp += `<td>${checkDataNumb(itemData['socadangdieutri'])}</td>`;
+            temp += `<td>${checkDataNumb(itemData['socatuvong'])}</td>`;
+            temp += `<td>${checkDataNumb(itemData['value'])}</td>`;
             temp += `</tr>`;
         });
         document.getElementById('datatable').innerHTML = temp;
@@ -107,13 +114,13 @@ const clCaTuVong = new Array();
       let temp = "";
 
       data = clCaNhiem[0];
-      data.forEach((itemData) => {
-          temp += `<tr>`;
-          temp += `<td>${itemData['stt']}</td>`;
+      data.slice().reverse().forEach((itemData, index) => {
+          temp += `<tr class="reverse-row">`;
+          temp += `<td>${index+1}</td>`;
           temp += `<td>${itemData['day']}</td>`;
-          temp += `<td>${itemData['quantity']}</td>`;
-          temp += `<td>${itemData['cakhoi']}</td>`;
-          temp += `<td>${itemData['catuvong']}</td>`;
+          temp += `<td>${checkDataNumb(itemData['quantity'])}</td>`;
+          temp += `<td>${checkDataNumb(itemData['cakhoi'])}</td>`;
+          temp += `<td>${checkDataNumb(itemData['catuvong'])}</td>`;
           temp += `</tr>`;
       });
       document.getElementById('datatableCL').innerHTML = temp;

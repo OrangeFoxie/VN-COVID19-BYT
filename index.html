@@ -14,7 +14,8 @@
     <section>
         <div>
             <h1>Bảng thông tin khu vực ca bệnh</h1>
-            <table>
+
+            <table class="sortable">
                 <thead>
                     <tr>
                         <th>STT</th>
@@ -29,9 +30,10 @@
                 <tbody id="datatable"></tbody>
             </table>
         </div>
+
         <div>
             <h1>Bảng thông tin ca bệnh theo ngày</h1>
-            <table >
+            <table class="sortable">
                 <thead>
                     <tr>
                         <th>STT</th>
@@ -45,6 +47,7 @@
             </table>
         </div>
     </section>
+
     <div class="infoapi">
         <ul>
             <li><a href="https://api.apify.com/v2/key-value-stores/p3nS2Q9TUn6kUOriJ/records/LATEST" target="_blank">API THÔNG TIN KHU VỰC</a></li>
@@ -57,6 +60,7 @@
     </div>
     
     <script src="data.js"></script>
+    <script src="sortTable.js"></script>
 </body>
 
 </html>
