@@ -11,7 +11,7 @@ Promise.all([
       return response.json();
     }));
   }).then(function (data) { // if(data), call data
-    main(data);
+    window.onload = main(data);
   }).catch(function (error) { // if(!data), call error
     console.log(error);
   });
