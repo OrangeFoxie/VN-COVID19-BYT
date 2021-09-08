@@ -60,6 +60,7 @@ function getNameKV(caBenhArr, khuVucArr) {
     }
   }
 }
+
 function getCachLi(data) {
   cachLiArr.push(data);
   clCaKhoi.push(cachLiArr[0][2]["cakhoi"]);
