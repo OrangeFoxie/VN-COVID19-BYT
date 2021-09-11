@@ -1,53 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="./favicon/favicon.ico"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>VIETNAM simple CoVid-19</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1 class="txtcenter tieude">THÔNG TIN COVID-19 VN 2021</h1>
     <section>
-        <div>
-            <h1>Bảng thông tin khu vực ca bệnh</h1>
+      <div>
+        <h1>Bảng thông tin khu vực ca bệnh</h1>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>STT</th>
-                        <th>ID</th>
-                        <th>Khu vực</th>
-                        <th>Số ca khỏi</th>
-                        <th>Số ca đang điều trị</th>
-                        <th>Số ca tử vong</th>
-                        <th>Tổng ca bệnh</th>
-                    </tr>
-                </thead>
-                <tbody id="datatable"></tbody>
-            </table>
-        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Khu vực</th>
+              <th>Tổng ca bệnh</th>
+              <th>Số ca tử vong</th>
+              <th>Số ca đang điều trị</th>
+              <th>Số ca hồi phục</th>
+              <th>Ca bệnh mới</th>
+            </tr>
+          </thead>
+          <tbody id="tableCaBenh"></tbody>
+        </table>
+      </div>
 
-        <div>
-            <h1>Bảng thông tin ca bệnh theo ngày</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>STT</th>
-                        <th>Ngày</th>
-                        <th>Số ca nhiễm</th>
-                        <th>Số ca khỏi</th>
-                        <th>Số ca tử vong</th>
-                    </tr>
-                </thead>
-                <tbody id="datatableCL"></tbody>
-            </table>
-        </div>
+      <div>
+        <h1>Bảng thông tin ca bệnh theo ngày</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Ngày</th>
+              <th>Số ca nhiễm</th>
+              <th>Số ca khỏi</th>
+              <th>Số ca tử vong</th>
+            </tr>
+          </thead>
+          <tbody id="tableCaBenhTheoNgay"></tbody>
+        </table>
+      </div>
     </section>
 
-    <script src="data.js"></script>
-</body>
+    <!-- <canvas id="myChart" width="400" height="200"></canvas> -->
+
+    <!-- <script src="./javascript/chart.js"></script> -->
+    <script src="./javascript/data.js"></script>
+  </body>
 </html>
