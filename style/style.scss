@@ -111,13 +111,12 @@ section {
   width: 80vh;
   height: auto;
   margin: 5rem auto;
+}
 
-  #mychart {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+.chart-sm {
+  width: 60vh;
+  height: auto;
+  margin: 5rem auto;
 }
 
 footer {
