@@ -326,6 +326,7 @@ function chartCaBenhTheoNgay() {
       ],
     },
     options: {
+      reponsive: true,
       scales: {
         y: {
           beginAtZero: true,

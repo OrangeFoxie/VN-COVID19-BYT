@@ -63,14 +63,16 @@ section {
   text-align: center; }
 
 .chart {
-  width: 80vh;
+  width: 60vw;
   height: auto;
-  margin: 5rem auto; }
-
-.chart-sm {
-  width: 60vh;
-  height: auto;
-  margin: 5rem auto; }
+  margin: 5rem auto;
+  overflow: hidden; }
+  .chart-sm {
+    width: 60vw;
+    height: auto;
+    margin: 5rem auto;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out; }
 
 footer {
   position: relative;
